@@ -3,7 +3,7 @@
 .columnDropArrow {
   display: flex;
   justify-content: center;
-  width: 100px;
+  width: $boardSlotSize;
   margin-bottom: 5px;
 
   > svg {

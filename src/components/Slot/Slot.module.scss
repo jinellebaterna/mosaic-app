@@ -4,13 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: $boardSlotSize;
+  height: $boardSlotSize;
 
   .circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
+    width: $boardCircleDiameter;
+    height: $boardCircleDiameter;
+    border-radius: $boardCircleDiameter/2;
+    transition: background-color 0.8s ease;
     background-color: $emptySlotColor;
 
     @extend .hasShadowInset;
