@@ -49,7 +49,16 @@ const Board = ({ rowCount, columnCount }) => {
   function renderDropIcons() {
     const icons = [];
     for (let i = 0; i < columnCount; i++) {
-      icons.push(<ColumnDropArrow onDrop={() => handleDrop(i)} />);
+      let row = rowCount - 1;
+      while (row >= 0) {
+        if (boardState[row][i] === 0) {
+          break;
+        }
+        row--;
+      }
+      const disabled = row < 0;
+
+      icons.push(<ColumnDropArrow disabled={disabled} onDrop={() => handleDrop(i)} />);
     }
     return icons;
   }

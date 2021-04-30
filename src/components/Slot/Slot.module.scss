@@ -11,7 +11,7 @@
     width: $boardCircleDiameter;
     height: $boardCircleDiameter;
     border-radius: $boardCircleDiameter/2;
-    transition: background-color 0.8s ease;
+    transition: background-color 0.5s ease;
     background-color: $emptySlotColor;
 
     @extend .hasShadowInset;

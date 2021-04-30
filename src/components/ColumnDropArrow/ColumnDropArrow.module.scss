@@ -18,3 +18,16 @@
     }
   }
 }
+
+.disabled {
+  &:hover {
+    cursor: not-allowed;
+    > svg {
+      fill: $arrowDisabledColor;
+    }
+  }
+
+  > svg {
+    fill: $arrowDisabledColor;
+  }
+}
