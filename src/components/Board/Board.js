@@ -24,27 +24,45 @@ function getInitialBoardState(rowCount, columnCount) {
   return result;
 }
 
-function renderDropIcons(columnCount) {
-  const icons = [];
-  for (let i = 0; i < columnCount; i++) {
-    icons.push(<ColumnDropArrow />);
-  }
-  return icons;
-}
-
 const Board = ({ rowCount, columnCount }) => {
   // eslint-disable-next-line no-unused-vars
   const [boardState, setBoardState] = useState(getInitialBoardState(rowCount, columnCount));
+  const [playerTurn, setPlayerTurn] = useState(1);
+
+  function reset() {
+    setBoardState(getInitialBoardState(rowCount, columnCount));
+    setPlayerTurn(1);
+  }
+
+  function handleDrop(columnIndex) {
+    let row = rowCount - 1;
+    while (row >= 0) {
+      if (boardState[row][columnIndex] === 0) {
+        boardState[row][columnIndex] = playerTurn;
+        setPlayerTurn(playerTurn === 1 ? 2 : 1);
+        break;
+      }
+      row--;
+    }
+  }
+
+  function renderDropIcons() {
+    const icons = [];
+    for (let i = 0; i < columnCount; i++) {
+      icons.push(<ColumnDropArrow onDrop={() => handleDrop(i)} />);
+    }
+    return icons;
+  }
 
   return (
     <div className={styles.board}>
       <div className={styles.dropIcons}>
-        {renderDropIcons(columnCount)}
+        {renderDropIcons()}
       </div>
       <div className={styles.container}>
         {boardState.map((row) => renderRow(row))}
       </div>
-      <div className={styles.base} />
+      <button type="button" label="reset" onClick={reset} className={styles.base} />
     </div>
   );
 };

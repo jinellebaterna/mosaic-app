@@ -11,7 +11,7 @@
   }
 
   .container {
-    background-color: $boardColor; //TODO: move to variables scss
+    background-color: $boardColor;
 
     @extend .hasShadow;
     .row {
@@ -22,7 +22,10 @@
   .base {
     height: 25px;
     width: 750px;
-    background-color: $boardColor; //TODO: move to variables scss
+    background-color: $boardColor;
+    border: none;
+    outline: none;
+    cursor: pointer;
 
     @extend .hasShadow;
   }
