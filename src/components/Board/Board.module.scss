@@ -1,12 +1,25 @@
+@import '../../styles';
+
 .board {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px;
 
-  .row {
-    display: flex;
+  .container {
+    background-color: $boardColor; //TODO: move to variables scss
+
+    @extend .hasShadow;
+    .row {
+      display: flex;
+    }
   }
 
-  //.column {
-  //  display: flex;
-  //}
+  .base {
+    height: 25px;
+    width: 750px;
+    background-color: $boardColor; //TODO: move to variables scss
+
+    @extend .hasShadow;
+  }
 }

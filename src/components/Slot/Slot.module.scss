@@ -1,5 +1,26 @@
+@import '../../styles';
+
 .slot {
-  background-color: red;
-  width: 30px;
-  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: $emptySlotColor;
+
+    @extend .hasShadowInset;
+  }
+
+  .player1 {
+    background-color: $player1Color;
+  }
+
+  .player2 {
+    background-color: $player2Color;
+  }
 }

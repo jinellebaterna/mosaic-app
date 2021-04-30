@@ -1,0 +1,19 @@
+$boardColor: #00A99D;
+
+$emptySlotColor: white;
+$player1Color: #C1272D;
+$player2Color: #FCEE21;
+
+$boxShadow: -5px 5px 18px -4px rgba(0,0,0,0.5);
+
+.hasShadow {
+  box-shadow: $boxShadow;
+  -webkit-box-shadow: $boxShadow;
+  -moz-box-shadow: $boxShadow;
+}
+
+.hasShadowInset {
+  box-shadow: $boxShadow inset;
+  -webkit-box-shadow: $boxShadow inset;
+  -moz-box-shadow: $boxShadow inset;
+}

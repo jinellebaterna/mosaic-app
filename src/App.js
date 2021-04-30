@@ -5,7 +5,7 @@ import Board from './components/Board/Board';
 function App() {
   return (
     <div className="App">
-      <Board rows={6} columns={7} />
+      <Board rowCount={6} columnCount={7} />
     </div>
   );
 }
