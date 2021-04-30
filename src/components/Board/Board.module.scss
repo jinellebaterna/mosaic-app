@@ -6,6 +6,10 @@
   align-items: center;
   margin: 20px;
 
+  .dropIcons {
+    display: flex;
+  }
+
   .container {
     background-color: $boardColor; //TODO: move to variables scss
 
