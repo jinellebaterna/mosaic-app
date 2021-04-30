@@ -11,6 +11,7 @@
   }
 
   .container {
+    margin: 0 25px;
     background-color: $boardColor;
 
     @extend .hasShadow;
@@ -21,11 +22,13 @@
 
   .base {
     height: 25px;
-    width: 750px;
+    width: 100%;
     background-color: $boardColor;
     border: none;
     outline: none;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
 
     @extend .hasShadow;
   }
